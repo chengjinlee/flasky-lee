@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% import "_macros.html" as macros %}
 
-{% block title %}Flasky - {{ user.username }}{% endblock %}
+{% block title %}leeblog - {{ user.username }}{% endblock %}
 
 {% block page_content %}
 <div class="page-header">
@@ -38,10 +38,10 @@
         </p>
         <p>
             {% if user == current_user %}
-            <a class="btn btn-default" href="{{ url_for('.edit_profile') }}">Edit Profile</a>
+            <a class="btn btn-default" href="{{ url_for('.edit_profile') }}">编辑个人信息</a>
             {% endif %}
             {% if current_user.is_administrator() %}
-            <a class="btn btn-danger" href="{{ url_for('.edit_profile_admin', id=user.id) }}">Edit Profile [Admin]</a>
+            <a class="btn btn-danger" href="{{ url_for('.edit_profile_admin', id=user.id) }}">编辑个人信息 [Admin]</a>
             {% endif %}
         </p>
     </div>
